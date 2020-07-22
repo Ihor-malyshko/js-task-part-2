@@ -1,0 +1,10 @@
+#gallery {
+  display: flex;
+  align-items: center;
+  margin: -15px;
+  list-style-type: none;
+}
+
+.gallery__item {
+  padding: 15px;
+}
