@@ -3,6 +3,7 @@
   align-items: center;
   margin: -15px;
   list-style-type: none;
+  margin-bottom: 50px;
 }
 
 .gallery__item {
@@ -10,5 +11,27 @@
 }
 
 #counter {
-  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#counter {
+  margin-bottom: 50px;
+}
+
+#validation-input {
+  display: block;
+  margin-bottom: 50px;
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
+
+#text-size {
+  margin-bottom: 50px;
 }

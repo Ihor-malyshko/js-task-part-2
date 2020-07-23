@@ -79,23 +79,57 @@
 
 // достучаться до кнопок другим методом. через data-action="decrement"
 // аптимезировать
-(() => {
-  const refs = {
-    decrement: document.querySelector("[decrement]"),
-    increment: document.querySelector("[increment]"),
-  };
 
-  refs.decrement.addEventListener("click", res);
-  refs.increment.addEventListener("click", add);
+const decrement = document.querySelector("[decrement]");
+const increment = document.querySelector("[increment]");
 
-  function add() {
-    document.querySelector("#value").textContent -= -1;
-  }
-  function res() {
-    document.querySelector("#value").textContent -= 1;
-  }
-})();
+decrement.addEventListener("click", () => {
+  document.querySelector("#value").textContent -= 1;
+});
+increment.addEventListener("click", () => {
+  document.querySelector("#value").textContent -= -1;
+});
 
 // /////////////////////////////////////////////////////
 // // task 5
+// /////////////////////////////////////////////////////
+
+const inputNameRef = document.querySelector("#name-input");
+const spanNameRef = document.querySelector("#name-output");
+
+inputNameRef.addEventListener("blur", (event) => {
+  spanNameRef.textContent = event.target.value;
+  console.dir(event.target.value);
+});
+
+// /////////////////////////////////////////////////////
+// // task 6
+// /////////////////////////////////////////////////////
+
+const inputValidRef = document.querySelector("#validation-input");
+inputValidRef.addEventListener("blur", (event) => {
+  // console.dir(event.target.attributes[2].value);
+  // console.dir(event.target.dataset.length);
+  // console.dir(inputValidRef.getAttribute("data-length"));
+  if (event.target.value.length === inputValidRef.getAttribute("data-length")) {
+    inputValidRef.classList.add("valid");
+    inputValidRef.classList.remove("invalid");
+  } else {
+    inputValidRef.classList.add("invalid");
+    inputValidRef.classList.remove("valid");
+  }
+});
+
+// /////////////////////////////////////////////////////
+// // task 7
+// /////////////////////////////////////////////////////
+
+const inputSizeRef = document.querySelector("#font-size-control");
+const spanSizeRef = document.querySelector("#text-size");
+inputSizeRef.addEventListener("mouseup", (event) => {
+  spanSizeRef.style.fontSize = event.target.value + "px";
+});
+
+// /////////////////////////////////////////////////////
+// // task 8
 // /////////////////////////////////////////////////////
