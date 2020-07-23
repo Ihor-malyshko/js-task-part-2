@@ -76,3 +76,26 @@
 // /////////////////////////////////////////////////////
 // // task 4
 // /////////////////////////////////////////////////////
+
+// достучаться до кнопок другим методом. через data-action="decrement"
+// аптимезировать
+(() => {
+  const refs = {
+    decrement: document.querySelector("[decrement]"),
+    increment: document.querySelector("[increment]"),
+  };
+
+  refs.decrement.addEventListener("click", res);
+  refs.increment.addEventListener("click", add);
+
+  function add() {
+    document.querySelector("#value").textContent -= -1;
+  }
+  function res() {
+    document.querySelector("#value").textContent -= 1;
+  }
+})();
+
+// /////////////////////////////////////////////////////
+// // task 5
+// /////////////////////////////////////////////////////
