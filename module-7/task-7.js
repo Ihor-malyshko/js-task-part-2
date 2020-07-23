@@ -111,7 +111,7 @@ inputValidRef.addEventListener("blur", (event) => {
   // console.dir(event.target.attributes[2].value);
   // console.dir(event.target.dataset.length);
   // console.dir(inputValidRef.getAttribute("data-length"));
-  if (event.target.value.length === inputValidRef.getAttribute("data-length")) {
+  if (event.target.value.length == inputValidRef.getAttribute("data-length")) {
     inputValidRef.classList.add("valid");
     inputValidRef.classList.remove("invalid");
   } else {
