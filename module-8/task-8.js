@@ -9,8 +9,7 @@ const createItemGallery = (image) => {
 
   const link = document.createElement("a");
   link.classList.add("gallery__link");
-  // link.href = image.original;
-  // link.preventDefault();
+  link.href = image.original;
 
   const img = document.createElement("img");
   img.classList.add("gallery__image");
@@ -52,6 +51,7 @@ const nextImg = (key) => {
 };
 
 const galleryClick = (event) => {
+  event.preventDefault();
   if (event.target.nodeName === "IMG") {
     modalRef.classList.add("is-open");
     imgFullRef.src = event.target.dataSource;
