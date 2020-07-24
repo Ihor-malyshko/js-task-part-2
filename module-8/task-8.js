@@ -9,6 +9,8 @@ const createItemGallery = (image) => {
 
   const link = document.createElement("a");
   link.classList.add("gallery__link");
+  // link.href = image.original;
+  // link.preventDefault();
 
   const img = document.createElement("img");
   img.classList.add("gallery__image");
@@ -29,16 +31,42 @@ const imgFullRef = document.querySelector(".lightbox__image");
 const createGallery = galleryItem.map((image) => createItemGallery(image));
 galleryRef.append(...createGallery);
 
+const nextImg = (key) => {
+  const srcNow = galleryItem.map((item) => item.original);
+  if (key.code === "ArrowRight") {
+    for (let i = 0; i < srcNow.length - 1; i++) {
+      if (srcNow[i] === imgFullRef.src) {
+        imgFullRef.src = srcNow[i + 1];
+        break;
+      }
+    }
+  }
+  if (key.code === "ArrowLeft") {
+    for (let i = 1; i < srcNow.length; i++) {
+      if (srcNow[i] === imgFullRef.src) {
+        imgFullRef.src = srcNow[i - 1];
+        break;
+      }
+    }
+  }
+};
+
 const galleryClick = (event) => {
   if (event.target.nodeName === "IMG") {
     modalRef.classList.add("is-open");
     imgFullRef.src = event.target.dataSource;
+    window.addEventListener("keydown", closeModal);
+    window.addEventListener("keydown", nextImg);
   }
 };
 
-const closeModal = () => {
-  modalRef.classList.remove("is-open");
-  imgFullRef.src = "";
+const closeModal = (key) => {
+  if (event.target.nodeName === "BUTTON" || key.code == "Escape") {
+    modalRef.classList.remove("is-open");
+    imgFullRef.src = "";
+    window.removeEventListener("keydown", closeModal);
+    window.addEventListener("keydown", nextImg);
+  }
 };
 
 galleryRef.addEventListener("click", galleryClick);
