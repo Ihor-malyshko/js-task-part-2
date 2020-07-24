@@ -77,18 +77,21 @@
 // // task 4
 // /////////////////////////////////////////////////////
 
-// достучаться до кнопок другим методом. через data-action="decrement"
-// аптимезировать
-
 const decrement = document.querySelector("[decrement]");
 const increment = document.querySelector("[increment]");
 
-decrement.addEventListener("click", () => {
-  document.querySelector("#value").textContent -= 1;
-});
-increment.addEventListener("click", () => {
-  document.querySelector("#value").textContent -= -1;
-});
+const changeValue = (event) => {
+  if (event.target.getAttribute("data-action") === "decrement") {
+    // -1
+    document.querySelector("#value").textContent -= 1;
+  } else {
+    // - (-1) = =1
+    document.querySelector("#value").textContent -= -1;
+  }
+};
+
+decrement.addEventListener("click", changeValue);
+increment.addEventListener("click", changeValue);
 
 // /////////////////////////////////////////////////////
 // // task 5
