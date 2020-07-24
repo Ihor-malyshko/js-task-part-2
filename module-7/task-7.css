@@ -33,5 +33,19 @@
 }
 
 #text-size {
+  display: block;
   margin-bottom: 50px;
+}
+
+#controls {
+  /* margin-bottom: 50px; */
+}
+
+#boxes {
+  margin: 50px;
+  display: flex;
+}
+
+#controls input {
+  background-color: tomato;
 }
