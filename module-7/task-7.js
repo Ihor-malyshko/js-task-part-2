@@ -102,7 +102,6 @@ const spanNameRef = document.querySelector("#name-output");
 
 inputNameRef.addEventListener("blur", (event) => {
   spanNameRef.textContent = event.target.value;
-  console.dir(event.target.value);
 });
 
 // /////////////////////////////////////////////////////
