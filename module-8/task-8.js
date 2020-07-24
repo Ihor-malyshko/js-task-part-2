@@ -32,19 +32,19 @@ const createGallery = galleryItem.map((image) => createItemGallery(image));
 galleryRef.append(...createGallery);
 
 const nextImg = (key) => {
-  const srcNow = galleryItem.map((item) => item.original);
+  const srcAll = galleryItem.map((item) => item.original);
   if (key.code === "ArrowRight") {
-    for (let i = 0; i < srcNow.length - 1; i++) {
-      if (srcNow[i] === imgFullRef.src) {
-        imgFullRef.src = srcNow[i + 1];
+    for (let i = 0; i < srcAll.length - 1; i++) {
+      if (srcAll[i] === imgFullRef.src) {
+        imgFullRef.src = srcAll[i + 1];
         break;
       }
     }
   }
   if (key.code === "ArrowLeft") {
-    for (let i = 1; i < srcNow.length; i++) {
-      if (srcNow[i] === imgFullRef.src) {
-        imgFullRef.src = srcNow[i - 1];
+    for (let i = 1; i < srcAll.length; i++) {
+      if (srcAll[i] === imgFullRef.src) {
+        imgFullRef.src = srcAll[i - 1];
         break;
       }
     }
