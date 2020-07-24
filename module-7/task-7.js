@@ -85,8 +85,9 @@ const changeValue = (event) => {
     // -1
     document.querySelector("#value").textContent -= 1;
   } else {
-    // - (-1) = =1
+    // - (-1) = +1
     document.querySelector("#value").textContent -= -1;
+    // document.querySelector("#value").textContent++;
   }
 };
 
