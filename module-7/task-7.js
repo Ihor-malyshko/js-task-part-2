@@ -111,13 +111,6 @@ inputNameRef.addEventListener("blur", (event) => {
 
 const inputValidRef = document.querySelector("#validation-input");
 inputValidRef.addEventListener("blur", (event) => {
-  console.dir(event.target);
-
-  console.dir(event.element);
-
-  console.dir(event.currentTarget);
-
-  console.dir(event.node);
   // console.dir(event.target.attributes[2].value);
   // console.dir(event.target.dataset.length);
   // console.dir(inputValidRef.getAttribute("data-length"));
