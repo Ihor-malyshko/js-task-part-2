@@ -8,6 +8,7 @@ body {
 
 .item {
   margin: 0 30px;
+  list-style: none;
 }
 
 #gallery {

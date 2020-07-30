@@ -64,7 +64,6 @@ const createItemGallery = (image) => {
   const img = document.createElement("img");
   img.src = image.url;
   img.alt = image.alt;
-  img.width = 500;
 
   item.appendChild(img);
   return item;
