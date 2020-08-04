@@ -4,14 +4,11 @@ console.log("task-7");
 // task 1
 /////////////////////////////////////////////////////
 
-const categories = document.querySelectorAll("#categories .item").length;
+const categories = document.querySelectorAll("#categories .item");
 
-console.log(`В списке ${categories} категории.`);
+console.log(`В списке ${categories.length} категории.`);
 
-const listsCategoriesRef = document.querySelectorAll("#categories .item");
-// console.dir(listsRef);
-
-listsCategoriesRef.forEach((item) =>
+categories.forEach((item) =>
   console.log(
     `Категория: ${item.querySelector("h2").textContent},
   Количество элементов: ${item.querySelectorAll("li").length}`
@@ -76,17 +73,15 @@ document.querySelector("#gallery").append(...createGallery);
 // task 4
 /////////////////////////////////////////////////////
 
-const decrement = document.querySelector("[decrement]");
-const increment = document.querySelector("[increment]");
+const decrement = document.querySelector('[data-action="decrement"]');
+const increment = document.querySelector('[data-action="increment"]');
+const valueRef = document.querySelector("#value");
 
 const changeValue = (event) => {
   if (event.target.getAttribute("data-action") === "decrement") {
-    // -1
-    document.querySelector("#value").textContent -= 1;
+    valueRef.textContent--;
   } else {
-    // - (-1) = +1
-    document.querySelector("#value").textContent -= -1;
-    // document.querySelector("#value").textContent++;
+    valueRef.textContent++;
   }
 };
 
@@ -155,7 +150,6 @@ const createBoxes = () => {
     div.style.height = i * value + 30 + "px";
     divs.push(div);
   }
-  console.dir(divs);
   return divs;
 };
 
